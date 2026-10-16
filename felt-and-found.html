@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Felt &amp; Found Case Study</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Felt & Found case study by Lida Voprsalova: research, decisions, prototype and visual language.">
+<meta property="og:title" content="Felt &amp; Found Case Study">
+<meta property="og:description" content="Felt & Found case study by Lida Voprsalova: research, decisions, prototype and visual language.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://lidavoprsalova.github.io/felt-and-found.html">
+<meta property="og:image" content="https://lidavoprsalova.github.io/media/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="media/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+/* Layout: one calm reading column; oversized type sets the scale of each section, the way the app's type carries the body state. */
+:root {
+  --bg: #e8e4dd; --surface: #ddd5c9; --ink: #3b2939; --soft: #5f5a52; --hair: rgba(59,41,57,.14); --accent: #2b3c92;
+  --hi: #fdfbf7; --lo: #c3bcb0;
+  --display: "Bricolage Grotesque", "Arial Narrow", system-ui, sans-serif;
+  --body: "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #1f1d1c; --surface: #2e2a27; --ink: #ece8e1; --soft: #a39d94; --hair: rgba(236,232,225,.13); --accent: #8e9cf2;
+  --hi: rgba(255,250,242,.05); --lo: rgba(0,0,0,.55); color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --bg: #1f1d1c; --surface: #2e2a27; --ink: #ece8e1; --soft: #a39d94; --hair: rgba(236,232,225,.13); --accent: #8e9cf2;
+  --hi: rgba(255,250,242,.05); --lo: rgba(0,0,0,.55); color-scheme: dark; }
+
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font: 400 17px/1.6 var(--body); -webkit-font-smoothing: antialiased; }
+.wrap { max-width: 1080px; margin: 0 auto; padding-inline: 20px; padding-block: 56px 96px; display: grid; gap: 88px; }
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+h1, h2, h3 { font-family: var(--display); text-wrap: balance; margin: 0; letter-spacing: -0.03em; }
+p { margin: 0; max-width: 65ch; }
+.eyebrow { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--soft); font-weight: 600; }
+
+/* hero */
+.hero { display: grid; gap: 28px; }
+.hero h1 { font-size: clamp(64px, 13vw, 168px); line-height: .8; font-weight: 800; font-variation-settings: "wdth" 76, "opsz" 96; }
+.hero h1 span { display: block; margin-left: 12%; font-weight: 300; }
+.hero .lede { font-size: clamp(19px, 2.2vw, 23px); line-height: 1.45; max-width: 40ch; }
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 18px 32px; border-top: 1px solid var(--hair); padding-top: 22px; }
+.facts div { display: grid; gap: 4px; min-width: 0; }
+.facts dt { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--soft); font-weight: 600; }
+.facts dd { margin: 0; font-size: 15px; line-height: 1.45; }
+.status { display: inline-flex; align-items: center; gap: 8px; }
+.status i { width: 9px; height: 9px; border-radius: 50%; background: var(--accent); }
+
+/* sections */
+section { display: grid; gap: 22px; }
+section > h2 { font-size: clamp(36px, 6vw, 64px); line-height: .9; font-weight: 700; font-variation-settings: "wdth" 80, "opsz" 72; }
+.cols { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 28px 48px; }
+@media (max-width: 760px) { .cols { grid-template-columns: 1fr; } }
+.quote { font-family: var(--display); font-size: clamp(22px, 3vw, 30px); line-height: 1.15; font-weight: 300; font-variation-settings: "wdth" 90, "opsz" 36; letter-spacing: -0.02em; max-width: 30ch; }
+ul.plain { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; max-width: 65ch; }
+ul.plain li { padding-left: 18px; position: relative; }
+ul.plain li::before { content: ""; position: absolute; left: 0; top: .7em; width: 7px; height: 7px; border-radius: 50%; background: var(--soft); }
+
+/* pillars: raised = the app's own relief language */
+.pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 18px; list-style: none; margin: 0; padding: 0; }
+.pillars li { background: var(--bg); border-radius: 26px; padding: 20px 20px 22px; box-shadow: -6px -6px 14px var(--hi), 8px 8px 18px var(--lo); display: grid; gap: 8px; align-content: start; min-width: 0; }
+.pillars b { font-family: var(--display); font-size: 22px; line-height: 1.05; font-weight: 600; letter-spacing: -0.02em; }
+.pillars span { font-size: 15px; color: var(--soft); line-height: 1.45; }
+.pillars em { font-style: normal; font-size: 12px; letter-spacing: .12em; color: var(--soft); font-weight: 600; }
+
+/* research table */
+.tablewrap { overflow-x: auto; border-top: 1px solid var(--hair); }
+table { border-collapse: collapse; width: 100%; min-width: 620px; font-size: 15px; }
+th, td { text-align: left; vertical-align: top; padding: 14px 16px 14px 0; border-bottom: 1px solid var(--hair); }
+th { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--soft); font-weight: 600; }
+td:first-child { font-weight: 600; width: 26%; }
+
+/* flow */
+.flow { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin: 0; padding: 0; font-size: 14px; }
+.flow li { padding: 8px 14px; border-radius: 999px; border: 1px solid var(--hair); }
+.flow li.cross { border-color: var(--accent); color: var(--accent); }
+
+figure { margin: 0; display: grid; gap: 12px; }
+figure img { width: 100%; height: auto; border-radius: 22px; display: block; border: 1px solid var(--hair); }
+figcaption { font-size: 14px; color: var(--soft); max-width: 70ch; }
+.img-dark { display: none; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .img-dark { display: block; } :root:not([data-theme="light"]) .img-light { display: none; } }
+:root[data-theme="dark"] .img-dark { display: block; } :root[data-theme="dark"] .img-light { display: none; }
+
+.legend { display: flex; flex-wrap: wrap; gap: 14px 28px; font-size: 15px; }
+.legend span { display: inline-flex; align-items: center; gap: 10px; }
+.chip { width: 34px; height: 22px; border-radius: 999px; background: var(--bg); display: inline-block; }
+.chip.up { box-shadow: -3px -3px 7px var(--hi), 4px 4px 9px var(--lo); }
+.chip.flat { border: 1px solid var(--hair); }
+.chip.down { box-shadow: inset -3px -3px 7px var(--hi), inset 4px 4px 9px var(--lo); }
+
+.thresholds { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; }
+.thresholds div { border-top: 3px solid var(--ink); padding-top: 12px; display: grid; gap: 6px; }
+.thresholds div.rework { border-color: var(--soft); }
+.thresholds b { font-family: var(--display); font-size: 30px; font-weight: 700; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+.thresholds span { font-size: 15px; color: var(--soft); }
+
+.changelog { font-size: 14px; color: var(--soft); border-top: 1px solid var(--hair); padding-top: 18px; display: grid; gap: 6px; }
+.changelog b { color: var(--ink); font-weight: 600; }
+footer { font-size: 14px; color: var(--soft); }
+</style>
+<style>html,body{margin:0}</style>
+</head>
+<body>
+<main class="wrap">
+  <p style="margin:0"><a href="index.html#p-feltfound">← Lida Voprsalova Design</a></p>
+
+  <header class="hero">
+    <p class="eyebrow">Case study · UX, service and product design</p>
+    <h1>Felt &amp;<span>Found</span></h1>
+    <p class="lede">An app that helps adults reach calm in the moment it gets to be too much, matched to how their body feels right now. Designed for the worst moment first.</p>
+    <dl class="facts">
+      <div><dt>Role</dt><dd>Solo founder, UX/UI and service designer, researcher</dd></div>
+      <div><dt>Timeline</dt><dd>June 2026 – ongoing</dd></div>
+      <div><dt>Tools</dt><dd>Figma, Figma Make, HTML prototypes, AI-assisted research synthesis</dd></div>
+      <div><dt>Status</dt><dd class="status"><i aria-hidden="true"></i>One loop designed, hi-fi prototype and user test in preparation</dd></div>
+    </dl>
+  </header>
+
+  <section aria-labelledby="problem">
+    <h2 id="problem">The problem</h2>
+    <div class="cols">
+      <p class="quote">Many adults already understand their stress patterns. In the moment it hits, that knowledge is out of reach.</p>
+      <div style="display:grid;gap:14px">
+        <p>Adults with insight into their own dysregulation can't reach regulation matched to their current state in real time, including transitions and mixed states. Existing tools fail them in three ways:</p>
+        <ul class="plain">
+          <li>they need intact self-reporting: pick a mood, read, decide;</li>
+          <li>they sort people into isolated categories instead of a moving ladder of states;</li>
+          <li>none notices when a step produced no felt shift, and none changes course.</li>
+        </ul>
+        <p><b>Who:</b> adults with insight but no access in the moment, designed through an extra lens for highly sensitive and highly empathic people.</p>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="pillars">
+    <h2 id="pillars">Five design principles</h2>
+    <ol class="pillars">
+      <li><em>P1</em><b>Body access, not knowledge</b><span>Entry and first step without words and without decisions.</span></li>
+      <li><em>P2</em><b>Full spectrum</b><span>A moving ladder of states, including shutdown and mixed states.</span></li>
+      <li><em>P3</em><b>Closed loop</b><span>Notices when a step didn't help and offers a different kind of step.</span></li>
+      <li><em>P4</em><b>Right order</b><span>An entry step first, then follow-ups ordered by direction: charged or heavy.</span></li>
+      <li><em>P5</em><b>No pressure</b><span>A tree grows from attention and can never wither. No scores, no streaks.</span></li>
+    </ol>
+  </section>
+
+  <section aria-labelledby="research">
+    <h2 id="research">Research</h2>
+    <p>I ran <b>17 structured research reviews</b>, each with sources, evidence tiers (firm, directional, popular claim) and a decision at the end. Every review changed something concrete.</p>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th scope="col">Topic</th><th scope="col">What changed in the design</th></tr></thead>
+        <tbody>
+          <tr><td>Entry in deep shutdown</td><td>At most one tap. When the user doesn't respond, a quiet screen with a personal line drawing and one kind sentence. Silence is not an alarm.</td></tr>
+          <tr><td>Compassionate messages</td><td>A small library of graded, original kind sentences. The user's own sentence takes priority, written only when calm.</td></tr>
+          <tr><td>State model</td><td>A two-axis map (activation × safety) with two flags instead of seven mood tiles.</td></tr>
+          <tr><td>Overwhelm split</td><td>One tap: "It's a lot. My body is: charged · heavy · don't know". "Don't know" leads to the safer branch.</td></tr>
+          <tr><td>Competition (3 reviews)</td><td>236+ "nervous system" apps on the US App Store, and simple before/after check-ins are now common. I dropped "closed loop" as a unique claim and kept what holds up: what happens after "it didn't help", a decision-free shutdown screen, felt shift without scores, honest claims, data on the device.</td></tr>
+          <tr><td>Onboarding</td><td>Two doors from first launch: acute with no onboarding at all, and a calm door: "I have a moment. Let me look around."</td></tr>
+          <tr><td>Highly empathic people</td><td>An "empathic lens": every screen passes four check questions instead of building a separate segment.</td></tr>
+          <tr><td>Faces and eyes</td><td>No generic faces. A stranger's smile has no proven calming effect, and outward-looking eyes read as being watched. Co-regulation runs through the user's own chosen person.</td></tr>
+          <tr><td>EU law</td><td>Wellness positioning outside medical device rules. Outward language describes the experience, never the body or treatment. Nothing stored without consent.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section aria-labelledby="decisions">
+    <h2 id="decisions">Key decisions</h2>
+    <div class="cols">
+      <ul class="plain">
+        <li><b>The app never asks about state on its own.</b> Only when the user opens it. The lock-screen widget stays neutral.</li>
+        <li><b>Re-check after 2–3 minutes:</b> a bit better · same · worse. "Nothing" is a valid result.</li>
+        <li><b>Correction ladder:</b> step back → a different type of step → a person → crisis card.</li>
+        <li><b>Crisis card from anywhere,</b> offline, through a small always-visible symbol and a hold gesture.</li>
+      </ul>
+      <ul class="plain">
+        <li><b>Voice:</b> state, not identity. Situation, not blame. Body first, words only after a shift. Invite, don't command. Czech copy addresses the user without grammatical gender.</li>
+        <li><b>Privacy by design:</b> data stays on the device. Nothing from an acute session is kept without consent, asked later in calm.</li>
+        <li><b>Ethics:</b> no sales screen after an acute session, no inactivity notifications, cancelling as easy as signing up.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section aria-labelledby="prototype">
+    <h2 id="prototype">One loop, ten screens</h2>
+    <p>A hi-fi clickable prototype in Figma Make, with timers, branch memory and hidden moderator controls for testing.</p>
+    <ol class="flow" aria-label="Prototype flow">
+      <li>Lock screen</li><li>How is your body?</li><li>It's a lot: charged · heavy · don't know</li><li>First step: look into the distance or towards the light</li><li>Re-check</li><li>Correction or savor</li><li>Close</li><li>When I don't respond</li><li class="cross">Crisis card from anywhere</li>
+    </ol>
+  </section>
+
+  <section aria-labelledby="visual">
+    <h2 id="visual">Visual language</h2>
+    <p>I explored nine directions as live prototypes in four times of day, then merged the strongest three into one: oversized asymmetric type where <b>scale carries the body state</b>, soft relief <b>only on what can be pressed</b>, and organic pebble shapes in a soft light that changes from morning to night. One accent colour means only "the way to a person". Text contrast is 9–14 : 1 in every time of day.</p>
+    <figure>
+      <img class="img-light" src="media/feltfound.jpg" alt="Four phone screens in a warm light theme: the entry screen with the giant words 'Je toho moc' over a soft pebble, the body-state screen with 'nabité', 'nevím' and 'těžké', a quiet screen with one kind sentence, and the crisis card with phone numbers." width="1512" height="732" loading="lazy">
+      <img class="img-dark" src="media/feltfound-night.jpg" alt="The same four phone screens in the night theme with light text on a dark warm surface." width="1512" height="732" loading="lazy">
+      <figcaption>Direction I, "Soft quiet". Entry, body state, the quiet screen and the crisis card. Shown in your current theme: day or night.</figcaption>
+    </figure>
+    <div class="legend" aria-label="Relief language">
+      <span><i class="chip up" aria-hidden="true"></i>Raised: pressable</span>
+      <span><i class="chip flat" aria-hidden="true"></i>Flat: to read</span>
+      <span><i class="chip down" aria-hidden="true"></i>Pressed in: you are here</span>
+    </div>
+  </section>
+
+  <section aria-labelledby="testing">
+    <h2 id="testing">Safety and testing</h2>
+    <p>Before any session: a safety framework (how to end a session, crisis contacts, no testing with people in acute crisis), a consent text and a data record. The planned test has about five participants, at least two highly sensitive and one low-sensitivity contrast, in 60-minute moderated sessions with a debrief. Success thresholds are set before the first session:</p>
+    <div class="thresholds">
+      <div><b>3 of 5</b><span>describe a felt shift and find the step after "same" different and better. Nobody describes harm. → continue</span></div>
+      <div class="rework"><b>0–1 of 5</b><span>→ rework the loop before building anything more</span></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="learned">
+    <h2 id="learned">What I learned</h2>
+    <ul class="plain">
+      <li><b>Saying no is design work.</b> Dropping personal photos, faces and gamification made the product calmer and safer.</li>
+      <li><b>Evidence over hype.</b> Many "nervous system" claims don't hold up. Describing the experience instead keeps the product honest and legally clear.</li>
+      <li><b>Design for the worst moment first.</b> If a screen works in shutdown, it works everywhere.</li>
+    </ul>
+    <p><b>Next:</b> hi-fi prototype in Figma Make, test with five people, decision point in early December 2026, then MVP scope.</p>
+  </section>
+
+  <div class="changelog">
+    <b>Updates</b>
+    <span>16 Oct 2026 · First version: problem, principles, 17 research reviews, decisions, prototype scope, visual direction, test plan.</span>
+  </div>
+  <footer>This is a living case study, updated as the project moves. Felt &amp; Found is a wellness concept, not a medical device or a replacement for therapy.</footer>
+</main>
+</body>
+</html>
