@@ -118,7 +118,7 @@ footer { font-size: 14px; color: var(--soft); }
     <dl class="facts">
       <div><dt>Role</dt><dd>Solo founder, UX/UI and service designer, researcher</dd></div>
       <div><dt>Timeline</dt><dd>June 2026 – ongoing</dd></div>
-      <div><dt>Tools</dt><dd>Figma, Figma Make, HTML prototypes, AI-assisted research synthesis</dd></div>
+      <div><dt>Tools</dt><dd>Figma, clickable HTML prototypes, AI-assisted research synthesis</dd></div>
       <div><dt>Status</dt><dd class="status"><i aria-hidden="true"></i>One loop designed, hi-fi prototype and user test in preparation</dd></div>
     </dl>
   </header>
@@ -152,7 +152,7 @@ footer { font-size: 14px; color: var(--soft); }
 
   <section aria-labelledby="research">
     <h2 id="research">Research</h2>
-    <p>I ran <b>17 structured research reviews</b>, each with sources, evidence tiers (firm, directional, popular claim) and a decision at the end. Every review changed something concrete.</p>
+    <p>I ran <b>21 structured research reviews</b>, each with sources, evidence tiers (firm, directional, popular claim) and a decision at the end. Every review changed something concrete.</p>
     <div class="tablewrap">
       <table>
         <thead><tr><th scope="col">Topic</th><th scope="col">What changed in the design</th></tr></thead>
@@ -165,6 +165,8 @@ footer { font-size: 14px; color: var(--soft); }
           <tr><td>Onboarding</td><td>Two doors from first launch: acute with no onboarding at all, and a calm door: "I have a moment. Let me look around."</td></tr>
           <tr><td>Highly empathic people</td><td>An "empathic lens": every screen passes four check questions instead of building a separate segment.</td></tr>
           <tr><td>Faces and eyes</td><td>No generic faces. A stranger's smile has no proven calming effect, and outward-looking eyes read as being watched. Co-regulation runs through the user's own chosen person.</td></tr>
+          <tr><td>Joy without gamification</td><td>Gamification doesn't improve outcomes, and streaks make people quit after a break. Rule: delight yes, losable capital no. The tree grows when the user discovers what helps, not per visit. Coming back after a pause shows no day count, and rest is a choice, not a failure.</td></tr>
+          <tr><td>Progress metaphor</td><td>Guilt comes from structure, not imagery: a daily rhythm, visible decay, a creature that needs you. The tree stays as a felted tree of found things, where each leaf is a tool the user found helps. Winter is frost, never a bare tree. A cairn was dropped because in Czech it reads as a burial mound.</td></tr>
           <tr><td>EU law</td><td>Wellness positioning outside medical device rules. Outward language describes the experience, never the body or treatment. Nothing stored without consent.</td></tr>
         </tbody>
       </table>
@@ -178,19 +180,23 @@ footer { font-size: 14px; color: var(--soft); }
         <li><b>The app never asks about state on its own.</b> Only when the user opens it. The lock-screen widget stays neutral.</li>
         <li><b>Re-check after 2–3 minutes:</b> a bit better · same · worse. "Nothing" is a valid result.</li>
         <li><b>Correction ladder:</b> step back → a different type of step → a person → crisis card.</li>
-        <li><b>Crisis card from anywhere,</b> offline, through a small always-visible symbol and a hold gesture.</li>
+        <li><b>Crisis card from anywhere,</b> offline, through a small always-visible symbol and a hold gesture. People first, at most three choices at once; other lines tucked away.</li>
+        <li><b>"I'm here" never leads to another question.</b> After silence or the crisis card, the app simply stays.</li>
       </ul>
       <ul class="plain">
         <li><b>Voice:</b> state, not identity. Situation, not blame. Body first, words only after a shift. Invite, don't command. Czech copy addresses the user without grammatical gender.</li>
         <li><b>Privacy by design:</b> data stays on the device. Nothing from an acute session is kept without consent, asked later in calm.</li>
         <li><b>Ethics:</b> no sales screen after an acute session, no inactivity notifications, cancelling as easy as signing up.</li>
+        <li><b>One quality lens for every screen:</b> six yes/no questions merging empathy and shame, including "does the interface itself judge?" (no timers that move you on, no waiting gates, no dead options).</li>
+        <li><b>Two paths, one map:</b> in the acute moment the app only uses what has already helped; new steps are tried on calm days, chapter by chapter.</li>
+        <li><b>A real person behind it:</b> signed with a first name and a short story, full name on a "Who's behind this" page.</li>
       </ul>
     </div>
   </section>
 
   <section aria-labelledby="prototype">
-    <h2 id="prototype">One loop, ten screens</h2>
-    <p>A hi-fi clickable prototype in Figma Make, with timers, branch memory and hidden moderator controls for testing.</p>
+    <h2 id="prototype">A fast path and a calm path</h2>
+    <p>The acute loop is one complete flow of about ten screens. Beside it sits a calm path: a short experiment on the Today screen that adds a leaf when it helps, a personal support plan (people, a calm place, what helps), and chapter 1 of the self-discovery path with an interactive two-axis map. All of it lives in one clickable HTML prototype of 32 screens (timers, branch memory, a hold-anywhere crisis gesture, moderator controls), which is also what goes into the user test. A calm-layer menu (Today · Seed · What helps · Support) keeps navigation out of the acute path.</p>
     <ol class="flow" aria-label="Prototype flow">
       <li>Lock screen</li><li>How is your body?</li><li>It's a lot: charged · heavy · don't know</li><li>First step: look into the distance or towards the light</li><li>Re-check</li><li>Correction or savor</li><li>Close</li><li>When I don't respond</li><li class="cross">Crisis card from anywhere</li>
     </ol>
@@ -227,11 +233,20 @@ footer { font-size: 14px; color: var(--soft); }
       <li><b>Evidence over hype.</b> Many "nervous system" claims don't hold up. Describing the experience instead keeps the product honest and legally clear.</li>
       <li><b>Design for the worst moment first.</b> If a screen works in shutdown, it works everywhere.</li>
     </ul>
-    <p><b>Next:</b> hi-fi prototype in Figma Make, test with five people, decision point in early December 2026, then MVP scope.</p>
+    <p><b>Next:</b> find a clinical consultant, test the HTML prototype with five people, decision point in early December 2026, then MVP scope.</p>
   </section>
 
   <div class="changelog">
     <b>Updates</b>
+    <span>22 Oct 2026 · The product backbone: a fast path for acute moments and a calm path of six chapters where people build a map of themselves. Same rhythm in every chapter: taste, sense, try, find, take with you. In the acute moment the app only uses what has already helped; experiments happen on calm days. Chapter 1 prototyped with an interactive two-axis map: a felt pebble dragged from heavy to charged and from tense to at ease, suggesting one next step.</span>
+    <span>22 Oct 2026 · A reason to open the app on calm days: one short experiment on the Today screen with the same re-check; when it helps, a new leaf appears after a single consent question. "My person" became "My support": people, a calm place and what helps, filled in only when calm. A step indicator in the calm onboarding only, never in the acute path.</span>
+    <span>22 Oct 2026 · Shame-lens critique 27/40, using a new lens drawn from clinical writing on learning differences and shame. My first pass said the loop passed; the critique showed it did not. The silence timer no longer moves the person away, no inactive options on the entry screen, an unannounced re-check with three equal answers, no waiting gate after a shift, kinder endings after a hard moment. The empathy and shame lenses became one six-question lens.</span>
+    <span>20 Oct 2026 · Sixth critique 29/40 (a stricter independent reviewer). The re-check now lives on the step screen as three felt plates with pebbles, in the same language as the body-state screen, so the closed loop looks like the product, not a form. A quiet "help" sits within thumb reach where the hold gesture is off. Plates on the first two screens were tried and removed the same day (they fought the pebbles), and the grey outline around buttons went too: pressability now rests on relief alone, to be checked in the test.</span>
+    <span>20 Oct 2026 · Fifth heuristic critique 30/40 (23 → 30 over five rounds). The crisis helpline label wraps again, the hold gesture waits while the user looks away, a way back after the silence timer, a night version of "look towards some light".</span>
+    <span>18 Oct 2026 · Crisis and calm screens: research review 20 and a short review on the author signature. "I'm here" stays in place, crisis card limited to three choices, trust screen in three steps, signed with a first name. Critiques 27 → 29/40, accessibility audit, Dynamic Type and iPhone SE.</span>
+    <span>17 Oct 2026 · Research review 19: progress metaphor. The tree stays, as a felted tree of found things; battery, weather and cairn dropped.</span>
+    <span>17 Oct 2026 · Research review 18: what keeps people in wellbeing apps without streaks or scores, 13 apps compared. Proposed rule: delight yes, losable capital no.</span>
+    <span>17 Oct 2026 · Clickable prototype of the full loop; proposed calm-layer menu. Heuristic critique (23/40) and fixes: safer crisis gesture, a way back in the acute path, quieter failure moments, 64 px answers. Second critique 26/40; equal-weight body choices, trust copy in the acute path.</span>
     <span>16 Oct 2026 · First version: problem, principles, 17 research reviews, decisions, prototype scope, visual direction, test plan.</span>
   </div>
   <footer>This is a living case study, updated as the project moves. Felt &amp; Found is a wellness concept, not a medical device or a replacement for therapy.</footer>
